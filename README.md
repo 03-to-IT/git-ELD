@@ -1,2 +1,1 @@
-# git-ELD
-myGit-Repo
+# Zeppelinite/StackEdit Repo
