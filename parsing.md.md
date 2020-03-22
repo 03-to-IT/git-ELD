@@ -1,19 +1,19 @@
-# Parsing Commands
+## Parsing Commands
 ```
 echo "There were $(grep -c ' sudo: ' /var/log/auth.log) attempts to use sudo, $(grep -c ' sudo: .*authentication failure' /var/log/auth.log) of which failed."
 There were 17 attempts to use sudo, 1 of which failed.
 ```
-### Print lines within time range
+#### Print lines within time range
 ```
 awk '/01:05:/,/01:20:/' access.log
 ```
-### Print within time range, when matching pattern "POST"
+#### Print within time range, when matching pattern "POST"
 ```
 awk '/01:05:/,/01:20:/ { if (/POST/) print }' access.log
 ```
 
 ---
-More example options: 
+#### More example options: 
 ```
 [^[:space:]]+ matches one or more non-space characters.
     
@@ -71,6 +71,7 @@ netstat -an | awk '{print $5}' | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3
 ```
 
 ---
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzMwMDQ4MzcsNDk3ODE4ODEwXX0=
+eyJoaXN0b3J5IjpbMTg4ODQ2MTE1OCw0OTc4MTg4MTBdfQ==
 -->
