@@ -1,5 +1,4 @@
-
-
+# Parsing Commands
 ```
 echo "There were $(grep -c ' sudo: ' /var/log/auth.log) attempts to use sudo, $(grep -c ' sudo: .*authentication failure' /var/log/auth.log) of which failed."
 There were 17 attempts to use sudo, 1 of which failed.
@@ -43,9 +42,9 @@ awk -F'[ "]+' '$7 == "/" { ipcount[$1]++ }
     END { for (i in ipcount) {
         printf "%15s - %d\n", i, ipcount[i] } }' logfile.log
 ```
-$7 is the requested url. You can add whatever conditions you want at the beginning. Replace the '$7 == "/" with whatever information you want.
+`$7` is the requested url. You can add whatever conditions you want at the beginning. Replace the `'$7 == "/"` with whatever information you want.
 
-If you replace the $1 in (ipcount[$1]++), then you can group the results by other criteria. Using $7 would show what pages were accessed and how often. Of course then you would want to change the condition at the beginning. The following would show what pages were accessed by a user from a specific IP:
+If you replace the $1 in (ipcount[$1]++), then you can group the results by other criteria. Using `$7` would show what pages were accessed and how often. Of course then you would want to change the condition at the beginning. The following would show what pages were accessed by a user from a specific IP:
 ```
 awk -F'[ "]+' '$1 == "1.2.3.4" { pagecount[$7]++ }
     END { for (i in pagecount) {
@@ -73,5 +72,5 @@ netstat -an | awk '{print $5}' | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3
 
 ---
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzE5Mjc3NDIsNDk3ODE4ODEwXX0=
+eyJoaXN0b3J5IjpbLTEwNzMwMDQ4MzcsNDk3ODE4ODEwXX0=
 -->
