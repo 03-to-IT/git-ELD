@@ -1,4 +1,4 @@
-## Parsing Commands
+## Parsing Files
 ```
 echo "There were $(grep -c ' sudo: ' /var/log/auth.log) attempts to use sudo, $(grep -c ' sudo: .*authentication failure' /var/log/auth.log) of which failed."
 There were 17 attempts to use sudo, 1 of which failed.
@@ -73,5 +73,5 @@ netstat -an | awk '{print $5}' | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4ODQ2MTE1OF19
+eyJoaXN0b3J5IjpbNTc5NDMzNzIzLDE4ODg0NjExNThdfQ==
 -->
